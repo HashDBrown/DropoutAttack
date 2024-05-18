@@ -1,0 +1,10 @@
+cd graph-scripts
+python Fig6.py
+python Fig7.py
+python Fig8_mnist.py
+python Fig8_cifar.py
+python Fig9_mnist.py
+python Fig9_cifar.py
+python Fig10.py
+python Fig11_mnist.py
+python Fig11_cifar.py
