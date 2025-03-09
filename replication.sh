@@ -1,7 +1,8 @@
+#!/bin/bash
 cd evaluation
 
 # Normal Trainings (No attack)
-
+echo "normal training"
 python normal-trainings/mnist_baseline.py # get unmodified MNIST model performance
 python normal-trainings/cifar_baseline.py # get unmodified CIFAR-10 model performance
 python normal-trainings/vgg_baseline.py 1 # get unmodified VGG-16 model performance
@@ -11,7 +12,7 @@ python normal-trainings/vgg_baseline.py 4
 python normal-trainings/vgg_baseline.py 5
 
 # Min Activation Attacks
-
+echo "min"
 python max-activation/A1_base_mnist.py # replicate attacked values from Table 1 (min activation attacks)
 python max-activation/A1_base_cifar.py
 python max-activation/A1_base_vgg.py 1
@@ -20,6 +21,7 @@ python max-activation/A1_base_vgg.py 3
 python max-activation/A1_base_vgg.py 4
 python max-activation/A1_base_vgg.py 5
 
+echo "max"
 python max-activation/A2_dropout_rate_mnist.py # replicate attacked values shown in figure 6
 python max-activation/A2_dropout_rate_cifar.py # (modified dropout rate in min activation attacks)
 python max-activation/A2_dropout_rate_vgg.py 0.1 1
@@ -34,7 +36,7 @@ python max-activation/A2_dropout_rate_vgg.py 0.3 4
 python max-activation/A2_dropout_rate_vgg.py 0.3 5
 
 # Sample Dropping Attacks
-
+echo "sample drop"
 python sample-dropping/B1_base_mnist.py # replicate attacked values shown in Table 2 (sample dropping attacks)
 python sample-dropping/B1_base_cifar.py
 python sample-dropping/B1_base_vgg.py 1
@@ -62,7 +64,7 @@ python sample-dropping/B2_drop_percent_vgg.py 0.7 4
 python sample-dropping/B2_drop_percent_vgg.py 0.7 5
 
 # Neuron Separation Attacks
-
+echo "neuron separation"
 python node-separation/C1_base_mnist.py # replicate attacked values shown in Table 3 (probabilistic neuron separation attacks)
 python node-separation/C1_base_cifar.py
 python node-separation/C1_base_vgg.py 0 1 # the above scripts test classes 0, 1, 2.
@@ -86,3 +88,4 @@ python node-separation/C5_multiclass_target_cifar.py # attacking recall w/ diffe
 
 # python blind-node-separation/D1_base_mnist.py # Replicate table 4 (blind neuron separation attacks)
 python blind-node-separation/D1_base_cifar.py
+
