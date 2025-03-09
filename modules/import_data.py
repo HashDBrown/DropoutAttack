@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import sys
 sys.path.append('../modules/custom-datasets')
-from mnist_activations_dataset import MNIST_ACTIVATIONS_DATASET
+#from mnist_activations_dataset import MNIST_ACTIVATIONS_DATASET
 from slicing_dataloader import FastTensorDataLoader
 
 def load_mnist(batch_size, transform):
